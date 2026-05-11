@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="success-toast" class="toast hidden" role="alert" aria-live="polite">
+    <div class="toast-header">
+      <img src="assets/images/icon-success-check.svg" alt="">
+      <span>Message Sent!</span>
+    </div>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+
+  <main class="container">
+    <form id="contact-form" novalidate>
+      <h1>Contact Us</h1>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="first-name">First Name <span class="asterisk">*</span></label>
+          <input type="text" id="first-name" required aria-describedby="first-name-error">
+          <span id="first-name-error" class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="last-name">Last Name <span class="asterisk">*</span></label>
+          <input type="text" id="last-name" required aria-describedby="last-name-error">
+          <span id="last-name-error" class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="email">Email Address <span class="asterisk">*</span></label>
+          <input type="email" id="email" required aria-describedby="email-error">
+          <span id="email-error" class="error-msg hidden">Please enter a valid email address</span>
+        </div>
+
+        <fieldset class="form-group full-width">
+          <legend>Query Type <span class="asterisk">*</span></legend>
+          <div class="radio-group">
+            <label class="radio-container">
+              <input type="radio" name="query-type" value="general" required>
+              <span>General Enquiry</span>
+            </label>
+            <label class="radio-container">
+              <input type="radio" name="query-type" value="support">
+              <span>Support Request</span>
+            </label>
+          </div>
+          <span id="query-error" class="error-msg hidden">Please select a query type</span>
+        </fieldset>
+
+        <div class="form-group full-width">
+          <label for="message">Message <span class="asterisk">*</span></label>
+          <textarea id="message" required aria-describedby="message-error"></textarea>
+          <span id="message-error" class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form-group full-width checkbox-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="consent" required aria-describedby="consent-error">
+            <span>I consent to being contacted by the team <span class="asterisk">*</span></span>
+          </label>
+          <span id="consent-error" class="error-msg hidden">To submit this form, please consent to being contacted</span>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
